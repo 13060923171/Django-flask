@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Top 10 thing I want to accomplish with you</title>
+    <link rel="stylesheet" href="../static/css/wish_style.css" />
+    <script
+      src="https://kit.fontawesome.com/3da1a747b2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+      <style type="text/css">
+     body{
+        background-image: url('../static/images/12.jpg');
+  		background-repeat: no-repeat;
+  		background-size: cover;
+  		background-position: center center;
+  		height: 100vh;
+  		color: #fff;
+  		font-family: 'Lato', sans-serif;
+  		display: flex;
+  		flex-direction: column;
+  		align-items: center;
+  		justify-content: center;
+  		text-align: center;
+  		margin: 0;
+  		overflow: hidden;
+
+	 }
+
+ </style>
+  <body>
+    <h1>Top 10 thing I want to accomplish with you</h1>
+    <ul class="draggable-list" id="draggable-list"></ul>
+     <form action="/8" method="post">
+    <button class="check-btn" id="check">
+      最后送给你的礼物
+      <i class="fas fa-paper-plane"></i>
+    </button>
+    </form>
+    <script src="../static/js/wish_script1.js"></script>
+  </body>
+<audio autoplay="autoplay" id="audio" loop="loop">
+                <source src="../static/voice/世间美好与你环环相扣.mp3" type="audio/MP3">
+
+        </audio>
+<script>
+    let mucics = document.getElementById('audio')
+    document.body.addEventListener('mousemove', function() {
+        setTimeout(() => {
+            mucics.play();
+        }, 20);
+    }, false);
+</script>
+</html>

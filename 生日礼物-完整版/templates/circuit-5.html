@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>现实中的距离</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/maps/world.js"></script>
+    <link rel="stylesheet" href="../static/css/circuit-style.css" />
+    <style type="text/css">
+</style>
+</head>
+<body>
+    <div id="60d869b560eb4d67a728ca3034e84d51" class="chart-container" style="width:1080px; height:500px;"></div>
+    <script>
+        var chart_60d869b560eb4d67a728ca3034e84d51 = echarts.init(
+            document.getElementById('60d869b560eb4d67a728ca3034e84d51'), 'light', {renderer: 'canvas'});
+        var option_60d869b560eb4d67a728ca3034e84d51 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "series": [
+        {
+            "type": "effectScatter",
+            "coordinateSystem": "geo",
+            "showEffectOn": "render",
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            },
+            "symbolSize": 12,
+            "data": [
+                {
+                    "name": "Melbourne",
+                    "value": [
+                        144.57,
+                        -37.48,
+                        9.132
+                    ]
+                },
+                {
+                    "name": "Beijing",
+                    "value": [
+                        116.3,
+                        39.9,
+                        0
+                    ]
+                }
+            ],
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "lines",
+            "coordinateSystem": "geo",
+            "zlevel": 3,
+            "progressive": 400,
+            "progressiveThreshold": 3000,
+            "effect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4,
+                "color": "blue",
+                "symbol": "arrow",
+                "symbolSize": 12,
+                "trailLength": 0.5
+            },
+            "symbol": [
+                "none",
+                "arrow"
+            ],
+            "polyline": false,
+            "large": false,
+            "largeThreshold": 2000,
+            "symbolSize": 12,
+            "data": [
+                {
+                    "name": "Melbourne->Beijing",
+                    "coords": [
+                        [
+                            144.57,
+                            -37.48
+                        ],
+                        [
+                            116.3,
+                            39.9
+                        ]
+                    ]
+                }
+            ],
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0.2,
+                "type": "solid"
+            },
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "",
+                ""
+            ],
+            "selected": {
+                "": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "formatter": function (params) {        return params.name + ' : ' + params.value[2];    },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "9,123\u5343\u7c73\u8fd9\u662f\u6211\u4eec\u4e4b\u95f4\u7684\u8ddd\u79bb",
+            "left": "center",
+            "top": "top",
+            "padding": 5,
+            "itemGap": 10,
+            "textStyle": {
+                "color": "rgba(47, 7, 19, 0.9)",
+                "fontSize": 25
+            }
+        }
+    ],
+    "geo": {
+        "map": "world",
+        "roam": true,
+        "aspectScale": 0.75,
+        "nameProperty": "name",
+        "selectedMode": false,
+        "itemStyle": {
+            "color": "#323c48",
+            "borderColor": "#111"
+        },
+        "emphasis": {}
+    }
+};
+        chart_60d869b560eb4d67a728ca3034e84d51.setOption(option_60d869b560eb4d67a728ca3034e84d51);
+    </script>
+<footer class="page-footer">
+  <form action="/5" method="post">
+        <!--        <input type="submit" value="post请求" name="bow"/>-->
+        <p></p>
+        <style type="text/css">
+            button {
+        width: 200px;
+        padding:8px;
+        background-color:#5DADE2;
+        color: aliceblue;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px; /* future proofing */
+        -khtml-border-radius: 10px; /* for old Konqueror browsers */
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        font-weight: 900;
+        font-size:125%  }
+        </style>
+
+        <body>
+        <div style="text-align:center">
+        <button>
+            go forward φ(≧ω≦*)♪
+            </div>
+        </button>
+        </body>
+
+</form>
+</footer>
+</body>
+</html>

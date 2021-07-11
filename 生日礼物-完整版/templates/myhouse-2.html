@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一些美好的记忆</title>
+    <link href="../static/css/myhouse.css" type="text/css" rel="stylesheet">
+</head>
+<style type="text/css">
+    body{
+            background-image: url("../static/images/pink_rice.png");
+            background-size: cover;
+        }
+
+</style>
+<body>
+        <div class="about">
+        <h1 class="about_tit" >在一起之后的一些纪念日</h1>
+        <img class="about_bgc" src="./img/from1.png" alt="">
+
+        <div class="introduce">
+            <div class="introduce_item">
+                <img class="introduce_item_img" src="../static/images/1.jpg" alt="">
+                <span class="introduce_item_title">在一起第一次约会，第一次接吻什么之类的</span>
+
+            </div>
+            <div class="introduce_item">
+
+                <span class="introduce_item_titles">什么时候确定关系的</span>
+                <img class="introduce_item_img" src="../static/images/2.jpg" alt="">
+            </div>
+            <div class="introduce_item">
+                <img class="introduce_item_img" src="../static/images/3.jpg" alt="">
+                <span class="introduce_item_title">什么时候第一次因为一些事情吵架</span>
+            </div>
+            <div class="introduce_item">
+                <span class="introduce_item_titles">什么时候第一次分离</span>
+                <img class="introduce_item_img" src="../static/images/4.jpg" alt="">
+            </div>
+        </div>
+
+        <audio autoplay="autoplay" id="audio" loop="loop">
+                <source src="../static/voice/环游星空.mp3" type="audio/MP3">
+
+        </audio>
+        <img class="music_img" src="../static/images/4.jpg" alt="">
+    </div>
+
+</body>
+
+<script>
+    let mucics = document.getElementById('audio')
+    document.body.addEventListener('mousemove', function() {
+        setTimeout(() => {
+            mucics.play();
+        }, 20);
+    }, false);
+</script>
+<br />
+  <form action="/2" method="post">
+        <!--        <input type="submit" value="post请求" name="bow"/>-->
+        <p></p>
+        <style type="text/css">
+            button {
+        width: 200px;
+        padding:8px;
+        background-color: #F06292;
+        color: aliceblue;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px; /* future proofing */
+        -khtml-border-radius: 10px; /* for old Konqueror browsers */
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        font-weight: 900;
+        font-size:125%  }
+        </style>
+
+        <body>
+        <div style="text-align:center">
+        <button>
+            go forward φ(≧ω≦*)♪
+            </div>
+        </button>
+        </body>
+
+</form>
+</html>

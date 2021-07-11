@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/css/heartbeat-style.css" />
+    <title>心灵上的距离</title>
+  </head>
+  <style type="text/css">
+     body{
+        background-image: url('../static/images/bg.jpg');
+  		background-repeat: no-repeat;
+  		background-size: cover;
+  		background-position: center center;
+  		height: 100vh;
+  		color: #fff;
+  		font-family: 'Lato', sans-serif;
+  		display: flex;
+  		flex-direction: column;
+  		align-items: center;
+  		justify-content: center;
+  		text-align: center;
+  		margin: 0;
+  		overflow: hidden;
+
+	 }
+
+ </style>
+  <body>
+    <h1>但是在心灵上我们却从未疏远</h1>
+
+    <div class="container" id="container">
+      <div class="circle"></div>
+
+      <p id="text"></p>
+
+      <div class="pointer-container">
+        <span class="pointer"></span>
+      </div>
+
+      <div class="gradient-circle"></div>
+    </div>
+      <form action="/6" method="post">
+        <!--        <input type="submit" value="post请求" name="bow"/>-->
+        <p></p>
+        <style type="text/css">
+            button {
+        width: 200px;
+        padding:8px;
+        background-color: #009688;
+        color: aliceblue;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px; /* future proofing */
+        -khtml-border-radius: 10px; /* for old Konqueror browsers */
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        font-weight: 900;
+        font-size:125%  }
+        </style>
+
+        <body>
+        <div style="text-align:center">
+        <button>
+            go forward φ(≧ω≦*)♪
+            </div>
+        </button>
+        </body>
+<audio autoplay="autoplay" id="audio" loop="loop">
+                <source src="../static/voice/海の形.mp3" type="audio/MP3">
+
+        </audio>
+<script>
+    let mucics = document.getElementById('audio')
+    document.body.addEventListener('mousemove', function() {
+        setTimeout(() => {
+            mucics.play();
+        }, 20);
+    }, false);
+</script>
+</form>
+    <script src="../static/js/heartbeat-script1.js"></script>
+  </body>
+</html>
