@@ -17,6 +17,14 @@ def render_home_template(request):
     return render(request, 'file.html', {'files': files})
 
 
+@require_GET
+def home(request):
+    if not os.path.exists(SAVED_FILES_DIR):
+        os.makedirs(SAVED_FILES_DIR)
+
+    return render_home_template(request)
+
+
 
 #下载文件
 @require_GET
@@ -34,7 +42,7 @@ def download(request, filename):
         response['Content-Disposition'] = 'attachment; filename=' + filename
         response['Content-Length'] = os.path.getsize(file_pathname)
 
-    return HttpResponse('success')
+    return response
 
 #上传文件
 @require_POST
@@ -50,13 +58,13 @@ def upload(request):
     with open(pathname, 'wb+') as destination:
         for chunk in file.chunks():
             destination.write(chunk)
-    return HttpResponse('success')
+    return render_home_template(request)
 
 
 @require_GET
 def deleteFile(request, filename):
     os.remove(os.path.join(SAVED_FILES_DIR,filename))
-    return HttpResponse('success')
+    return render_home_template(request)
 
 
 
