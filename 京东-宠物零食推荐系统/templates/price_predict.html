@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>商品价格预测器</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<style type="text/css">
+	body{
+		background-image: url('../static/images/bg.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		height: 100vh;
+		color: #fff;
+		font-family: 'Lato', sans-serif;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		margin: 0;
+		overflow: hidden;
+
+	}
+	img{
+		width: 100px;
+		margin-bottom: -120px;
+		margin-right: 400px;
+	}
+
+</style>
+<form action="/">
+        <!--        <input type="submit" value="post请求" name="bow"/>-->
+        <p></p>
+        <style type="text/css">
+            .btn1 {
+        width: 150px;
+        padding:8px;
+        background-color: #065aab;
+        color: aliceblue;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px; /* future proofing */
+        -khtml-border-radius: 10px; /* for old Konqueror browsers */
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        font-weight: 900;
+		position: absolute;
+		top: 10px;
+		left: 10px;
+        font-size:125%  }
+        </style>
+
+        <body>
+        <div style="text-align:left">
+        <button class="btn1">
+            宠物系统页面
+        </button>
+             </div>
+        </body>
+
+</form>
+    <form action="/suggest" method="post">
+        <!--        <input type="submit" value="post请求" name="bow"/>-->
+        <p></p>
+        <style type="text/css">
+            .btn2 {
+        width: 150px;
+        padding:8px;
+        background-color: #065aab;
+        color: aliceblue;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px; /* future proofing */
+        -khtml-border-radius: 10px; /* for old Konqueror browsers */
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        font-weight: 900;
+		position: absolute;
+		top: 10px;
+		left: 170px;
+        font-size:125%  }
+        </style>
+
+        <body>
+        <div style="text-align:left">
+        <button class="btn2">
+            提供合理建议
+        </button>
+             </div>
+        </body>
+
+</form>
+    <form action="/sql" method="post">
+        <!--        <input type="submit" value="post请求" name="bow"/>-->
+        <p></p>
+        <style type="text/css">
+            .btn3 {
+        width: 150px;
+        padding:8px;
+        background-color: #065aab;
+        color: aliceblue;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px; /* future proofing */
+        -khtml-border-radius: 10px; /* for old Konqueror browsers */
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        font-weight: 900;
+		position: absolute;
+		top: 10px;
+		left: 330px;
+				font-size:125%
+         }
+        </style>
+
+        <body>
+        <div style="text-align:left">
+        <button class="btn3">
+            数据展示页面
+        </button>
+             </div>
+        </body>
+
+</form>
+<body>
+<div class="box">
+	<div class="login-box">
+		<div class="login-title text-center">
+			<h1>
+				<small>价格预测</small>
+			</h1>
+		</div>
+		<div class="login-content ">
+			<div class="form">
+				<i class="layui-icon layui-icon-face-smile" style="font-size: 30px; color: #1E9FFF;"></i>
+				<form id="modifyPassword" class="form-horizontal" method="post">
+					<!-- 用户名输入 -->
+					<div class="form-group">
+						<div class="col-xs-10 col-xs-offset-1">
+							<div class="input-group">
+									<span class="input-group-addon"><span
+											class="glyphicon glyphicon-user"></span></span>
+								<input type="text" id="comment" name="comment" class="form-control" placeholder="销量">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-10 col-xs-offset-1">
+							<div class="input-group">
+									<span class="input-group-addon"><span
+											class="glyphicon glyphicon-user"></span></span>
+								<input type="text" id="goodrate" name="goodrate" class="form-control" placeholder="好评">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-10 col-xs-offset-1">
+							<div class="input-group">
+									<span class="input-group-addon"><span
+											class="glyphicon glyphicon-user"></span></span>
+								<input type="text" id="taste" name="taste" class="form-control" placeholder="口味">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-10 col-xs-offset-1">
+							<div class="input-group">
+									<span class="input-group-addon"><span
+											class="glyphicon glyphicon-user"></span></span>
+								<input type="text" id="brand" name="brand" class="form-control" placeholder="进口/国产">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-10 col-xs-offset-1">
+							<div class="input-group">
+									<span class="input-group-addon"><span
+											class="glyphicon glyphicon-user"></span></span>
+								<input type="text" id="kg" name="kg" class="form-control" placeholder="商品重量">
+							</div>
+						</div>
+					</div>
+
+					<br />
+
+					<style type="text/css">
+						button {
+							width: 200px;
+							padding:8px;
+							background-color: #F06292;
+							color: aliceblue;
+							-moz-border-radius: 10px;
+							-webkit-border-radius: 10px;
+							border-radius: 10px; /* future proofing */
+							-khtml-border-radius: 10px; /* for old Konqueror browsers */
+							text-align: center;
+							vertical-align: middle;
+							border: 1px solid transparent;
+							font-weight: 900;
+							font-size:125%  }
+					</style>
+
+					<body>
+					<div style="text-align:center">
+						<button>
+							开始预测
+
+						</button>
+					</div>
+
+					</body>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

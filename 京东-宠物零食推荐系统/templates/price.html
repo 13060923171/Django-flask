@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>商品价格预测器</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	</head>
+    <style type="text/css">
+     body{
+        background-image: url('../static/images/bg.png');
+  		background-repeat: no-repeat;
+  		background-size: cover;
+  		background-position: center center;
+  		height: 100vh;
+  		color: #fff;
+  		font-family: 'Lato', sans-serif;
+  		display: flex;
+  		flex-direction: column;
+  		align-items: center;
+  		justify-content: center;
+  		text-align: center;
+  		margin: 0;
+  		overflow: hidden;
+
+	 }
+	 img{
+		 width: 100px;
+		 margin-bottom: -120px;
+		 margin-right: 400px;
+	 }
+
+ </style>
+
+	<body>
+	<div class="box">
+		<div class="login-box">
+			<div class="login-title text-center">
+				<h1>
+					<small>价格预测</small>
+				</h1>
+			</div>
+			<div class="login-content ">
+				<div class="form">
+					<i class="layui-icon layui-icon-face-smile" style="font-size: 30px; color: #1E9FFF;"></i>
+					<form id="modifyPassword" class="form-horizontal" method="post">
+						<!-- 用户名输入 -->
+						<div class="form-group">
+							<div class="col-xs-10 col-xs-offset-1">
+								<div class="input-group">
+									{% if comment %}
+									<a>销量:{{ comment }} </a>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+                        <div class="form-group">
+							<div class="col-xs-10 col-xs-offset-1">
+								<div class="input-group">
+									{% if goodrate %}
+									<a>好评:{{ goodrate }} </a>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+                        <div class="form-group">
+							<div class="col-xs-10 col-xs-offset-1">
+								<div class="input-group">
+									{% if taste %}
+									<a>口味:{{ taste }} </a>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+                        <div class="form-group">
+							<div class="col-xs-10 col-xs-offset-1">
+								<div class="input-group">
+									{% if brand %}
+									<a>国产/进口:{{ brand }} </a>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+                        <div class="form-group">
+							<div class="col-xs-10 col-xs-offset-1">
+								<div class="input-group">
+									{% if kg %}
+									<a>商品重量:{{ kg }} </a>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+
+						<br />
+						<div class="form-group">
+							<div class="col-xs-10 col-xs-offset-1">
+								<div class="input-group">
+									{% if price %}
+									<a>预测价格:{{ price }} </a>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+
+
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>提供合理建议</title>
+		<link rel="stylesheet" type="text/css" href="../static/css/suggest.css" />
+	</head>
+
+	<body>
+	<div >
+		<font color="#efefef" size="10">商家建议:</font>
+		<p></p>
+		<font color="#efefef" size="5">关于零食价格的区间分布的选择最好在{{price1}},{{price2}}这个区间范围之内</font>
+		<p></p>
+		<font color="#efefef" size="5">在宠物零食的产地选择上,绝大数的商家都是选择{{brand}}</font>
+		<p></p>
+		<font color="#efefef" size="5">在宠物零食的口味选择上,最受欢迎的是{{taste1}},{{taste2}},{{taste3}}这几个口味</font>
+		<p></p>
+		<font color="#efefef" size="5">在宠物零食的热词中,最受欢迎的是{{word1}}这些热词,可以在标题添加这些标题,增加热度提升销量</font>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<font color="#efefef" size="10">买家建议:</font>
+		<p></p>
+		<font color="#efefef" size="5">关于零食价格的区间分布最好在{{price11}}这个区间范围之内,这个是平均好评最高的</font>
+		<p></p>
+		<font color="#efefef" size="5">在宠物零食的产地选择上,好评率最高的是{{brand11}},单纯考虑最好的可以考虑{{brand11}}</font>
+		<p></p>
+<!--		<font color="#efefef" size="5">好评依旧是是保持最高的,所以还是很推荐{{brand11}}</font>-->
+<!--		<p></p>-->
+		<font color="#efefef" size="5">在宠物零食的口味选择上,{{taste11}}平均好评是最高的</font>
+		<p></p>
+		<font color="#efefef" size="5">在宠物零食的品牌中,最受欢迎的是{{word11}},好评最高的是{{word11}}</font>
+		</div>
+		<form action="/" >
+        <!--        <input type="submit" value="post请求" name="bow"/>-->
+        <p></p>
+        <style type="text/css">
+            .btn1 {
+        width: 150px;
+        padding:8px;
+        background-color: #065aab;
+        color: aliceblue;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px; /* future proofing */
+        -khtml-border-radius: 10px; /* for old Konqueror browsers */
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        font-weight: 900;
+		position: absolute;
+		top: 700px;
+		right: 330px;
+        font-size:125%  }
+        </style>
+
+        <body>
+        <div style="text-align:left">
+        <button class="btn1">
+             宠物系统页面
+        </button>
+             </div>
+        </body>
+
+</form>
+    <form action="/sql" method="post">
+        <!--        <input type="submit" value="post请求" name="bow"/>-->
+        <p></p>
+        <style type="text/css">
+            .btn2 {
+        width: 150px;
+        padding:8px;
+        background-color: #065aab;
+        color: aliceblue;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px; /* future proofing */
+        -khtml-border-radius: 10px; /* for old Konqueror browsers */
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        font-weight: 900;
+		position: absolute;
+		top: 700px;
+		right: 170px;
+        font-size:125%  }
+        </style>
+
+        <body>
+        <div style="text-align:left">
+        <button class="btn2">
+            数据展示页面
+        </button>
+             </div>
+        </body>
+
+</form>
+    <form action="/test" method="post">
+        <!--        <input type="submit" value="post请求" name="bow"/>-->
+        <p></p>
+        <style type="text/css">
+            .btn3 {
+        width: 150px;
+        padding:8px;
+        background-color: #065aab;
+        color: aliceblue;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px; /* future proofing */
+        -khtml-border-radius: 10px; /* for old Konqueror browsers */
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        font-weight: 900;
+		position: absolute;
+		top: 700px;
+		right: 10px;
+				font-size:125%
+         }
+        </style>
+
+        <body>
+        <div style="text-align:left">
+        <button class="btn3">
+            价格预测
+        </button>
+             </div>
+        </body>
+
+</form>
+	</body>
+</html>

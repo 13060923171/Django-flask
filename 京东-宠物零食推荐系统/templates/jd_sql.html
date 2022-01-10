@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../static/css/app.css" />
+		<title>数据展示</title>
+		<style type="text/css">
+			.container {
+				margin:200px auto;
+			}
+
+			.panel-default>.panel-heading {
+				background-color: #3b4f7b;
+				border-color:#efefef;
+				/* color: #fff; */
+			}
+			/* 全局字体颜色 */
+			.table-responsive{ 
+				color: #fff;
+			}
+			
+			.panel {
+				border: 1px solid #efefef
+			}
+
+			.panel-body {
+				background: #3b4f7b;
+			}
+
+			.table-striped>tbody>tr:nth-of-type(odd) {
+				background-color: #3b4f7b;
+			}
+
+			.table-bordered>tbody>tr>td,
+			.table-bordered>tbody>tr>th,
+			.table-bordered>tfoot>tr>td,
+			.table-bordered>tfoot>tr>th,
+			.table-bordered>thead>tr>td,
+			.table-bordered>thead>tr>th {
+				border: 1px solid #efefef;
+			}
+
+			
+		</style>
+	</head>
+	<form action="/">
+        <!--        <input type="submit" value="post请求" name="bow"/>-->
+        <p></p>
+        <style type="text/css">
+            .btn1 {
+        width: 150px;
+        padding:8px;
+        background-color: #065aab;
+        color: aliceblue;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px; /* future proofing */
+        -khtml-border-radius: 10px; /* for old Konqueror browsers */
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        font-weight: 900;
+		position: absolute;
+		top: 10px;
+		left: 10px;
+        font-size:125%  }
+        </style>
+
+        <body>
+        <div style="text-align:left">
+        <button class="btn1">
+            宠物系统页面
+        </button>
+             </div>
+        </body>
+
+</form>
+    <form action="/suggest" method="post">
+        <!--        <input type="submit" value="post请求" name="bow"/>-->
+        <p></p>
+        <style type="text/css">
+            .btn2 {
+        width: 150px;
+        padding:8px;
+        background-color: #065aab;
+        color: aliceblue;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px; /* future proofing */
+        -khtml-border-radius: 10px; /* for old Konqueror browsers */
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        font-weight: 900;
+		position: absolute;
+		top: 10px;
+		left: 170px;
+        font-size:125%  }
+        </style>
+
+        <body>
+        <div style="text-align:left">
+        <button class="btn2">
+            提供合理建议
+        </button>
+             </div>
+        </body>
+
+</form>
+    <form action="/test" method="post">
+        <!--        <input type="submit" value="post请求" name="bow"/>-->
+        <p></p>
+        <style type="text/css">
+            .btn3 {
+        width: 150px;
+        padding:8px;
+        background-color: #065aab;
+        color: aliceblue;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px; /* future proofing */
+        -khtml-border-radius: 10px; /* for old Konqueror browsers */
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        font-weight: 900;
+		position: absolute;
+		top: 10px;
+		left: 330px;
+				font-size:125%
+         }
+        </style>
+
+        <body>
+        <div style="text-align:left">
+        <button class="btn3">
+            价格预测
+        </button>
+             </div>
+        </body>
+
+</form>
+	<body class="bg06">
+		<header class="header">
+			<h3>数据展示</h3>
+		</header>
+		<br>
+		<form action="/sql" method="post" >
+		<select name="limit" id="limit">
+			<option></option>
+			<option selected="selected">--请选择展示的数量--</option>
+			<option >20</option>
+			<option >30</option>
+			<option >40</option>
+			<option >50</option>
+			<option >60</option>
+			<option >70</option>
+			<option >80</option>
+			<option >90</option>
+			<option >100</option>
+		</select>
+		<select name="order" id="order">
+			<option></option>
+			<option selected="selected">--请选择排序的顺序--</option>
+			<option >从高到低</option>
+			<option >从低到高</option>
+		</select>
+		<select name="source" id="source">
+			<option></option>
+			<option selected="selected">--请选择来源类型--</option>
+			<option >国产</option>
+			<option >进口</option>
+		</select>
+		<select  name="taste" id="taste">
+			<option></option>
+			<option selected="selected">--请选择口味--</option>
+			<option >混合口味</option>
+			<option >牛肉味</option>
+			<option >鸡肉味</option>
+			<option >鸭肉味</option>
+			<option >奶香味</option>
+			<option >鱼肉味</option>
+			<option >羊肉味</option>
+			<option >水果味</option>
+		</select>
+		<input type="submit" value="查询" />
+	</form>
+		<div class="">
+			<div class="row " style="text-align:center" >
+				<div class="col-md-6 col-sm-12 col-xs-12  container">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+						</div>
+						<div class="panel-body">
+							<div class="table-responsive">
+								<table class="table table-striped table-bordered table-hover" >
+									<thead>
+										<tr>
+											{% for i in labels %}
+											<td>{{ i }}</td>
+											{% endfor %}
+										</tr>
+									</thead>
+									<tbody>
+										{% for i in content %}
+										<tr>
+											{% for j in i %}
+											<td>{{ j }}</td>
+											{% endfor %}
+										</tr>
+										{% endfor %}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+			integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+		</script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+			integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+		</script>
+	</body>
+</html>
