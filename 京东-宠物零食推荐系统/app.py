@@ -41,8 +41,8 @@ def show_sql():
         order = request.values.get('order')
         source = request.values.get('source')
         taste = request.values.get('taste')
-
-        if number is not None and order is not None and source is not None and taste is not None:
+        variety = request.values.get('variety')
+        if number is not None and order is not None and source is not None and taste is not None and variety is not None:
             if number == "--请选择展示的数量--":
                 number = 20
             if order == "--请选择排序的顺序--":
@@ -111,10 +111,16 @@ def show_sql():
                     taste = "and attribute LIKE '%羊肉味%'"
                 if taste == "水果味":
                     taste = "and attribute LIKE '%水果味%'"
+            if variety == "--请选择狗/猫--":
+                variety = 'jdsq'
+            if variety == "狗":
+                variety = "(SELECT * FROM jdsq WHERE attribute LIKE '%狗%') as variety"
+            if variety == "猫":
+                variety = "(SELECT * FROM jdsq WHERE attribute LIKE '%猫%') as variety"
 
             # get annual sales rank
             cur = conn.cursor()
-            sql = "select * from jdsq {} {} {} LIMIT {}".format(source, taste, order, number)
+            sql = "select * from {} {} {} {} LIMIT {}".format(variety,source, taste, order, number)
             cur.execute(sql)
             content = cur.fetchall()
 
