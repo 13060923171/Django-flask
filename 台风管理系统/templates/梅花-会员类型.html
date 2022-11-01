@@ -1,0 +1,193 @@
+{% extends "layout.html" %}
+
+{% block left %}
+<style>
+    ul {
+        list-style-type: none;
+        background-color: #000000;
+        height: 800px;
+        padding: 8px 16px;
+
+    }
+
+    li a {
+        display: block;
+        color:#FFFFFF;
+        text-decoration: none;
+    }
+    li a.active {
+        background-color: #4CAF50;
+        color: #000000;
+    }
+
+    li a:hover:not(.active) {
+        background-color: #4CAF50;
+        color: #000000;
+    }
+</style>
+<div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+        <li><a href="/梅花-LDA主题模型">LDA主题模型</a></li>
+        <li><a href="/梅花-词云">词云</a></li>
+        <li><a href="/梅花-会员类型">会员类型</a></li>
+        <li><a href="/梅花-数据指标变化趋势">数据指标变化趋势</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block right %}
+<!--右边展示-->
+<!--右边展示-->
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header">{{title}}</h1>
+
+    <div class="row placeholders">
+        <!--展示区-->
+        <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+        <div class="chart-container" style="height:500px;" id="fe48a68d06754bc8b9493526c2ce6a49">
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block echarts_js %}
+<script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+
+<script>
+    var chart_fe48a68d06754bc8b9493526c2ce6a49 = echarts.init(
+        document.getElementById('fe48a68d06754bc8b9493526c2ce6a49'), 'light', {renderer: 'canvas'});
+    var option_fe48a68d06754bc8b9493526c2ce6a49 = {
+        "animation": true,
+        "animationThreshold": 2000,
+        "animationDuration": 1000,
+        "animationEasing": "cubicOut",
+        "animationDelay": 0,
+        "animationDurationUpdate": 300,
+        "animationEasingUpdate": "cubicOut",
+        "animationDelayUpdate": 0,
+        "series": [
+            {
+                "type": "pie",
+                "clockwise": true,
+                "data": [
+                    {
+                        "name": "\u666e\u901a\u7528\u6237",
+                        "value": 7481
+                    },
+                    {
+                        "name": "\u9ec4v",
+                        "value": 2008
+                    },
+                    {
+                        "name": "\u84ddv",
+                        "value": 1832
+                    },
+                    {
+                        "name": "\u91d1v",
+                        "value": 297
+                    }
+                ],
+                "radius": [
+                    "40%",
+                    "55%"
+                ],
+                "center": [
+                    "50%",
+                    "50%"
+                ],
+                "label": {
+                    "show": true,
+                    "position": "outside",
+                    "margin": 8,
+                    "formatter": "{b}: {c}  {per|{d}%}  ",
+                    "backgroundColor": "#eee",
+                    "borderColor": "#aaa",
+                    "borderWidth": 1,
+                    "borderRadius": 4,
+                    "rich": {
+                        "a": {
+                            "color": "#999",
+                            "lineHeight": 22,
+                            "align": "center"
+                        },
+                        "abg": {
+                            "backgroundColor": "#e3e3e3",
+                            "width": "100%",
+                            "align": "right",
+                            "height": 22,
+                            "borderRadius": [
+                                4,
+                                4,
+                                0,
+                                0
+                            ]
+                        },
+                        "hr": {
+                            "borderColor": "#aaa",
+                            "width": "100%",
+                            "borderWidth": 0.5,
+                            "height": 0
+                        },
+                        "b": {
+                            "fontSize": 16,
+                            "lineHeight": 33
+                        },
+                        "per": {
+                            "color": "#eee",
+                            "backgroundColor": "#334455",
+                            "padding": [
+                                2,
+                                4
+                            ],
+                            "borderRadius": 2
+                        }
+                    }
+                }
+            }
+        ],
+        "legend": [
+            {
+                "data": [
+                    "\u666e\u901a\u7528\u6237",
+                    "\u9ec4v",
+                    "\u84ddv",
+                    "\u91d1v"
+                ],
+                "selected": {},
+                "show": true,
+                "padding": 5,
+                "itemGap": 10,
+                "itemWidth": 25,
+                "itemHeight": 14
+            }
+        ],
+        "tooltip": {
+            "show": true,
+            "trigger": "item",
+            "triggerOn": "mousemove|click",
+            "axisPointer": {
+                "type": "line"
+            },
+            "showContent": true,
+            "alwaysShowContent": false,
+            "showDelay": 0,
+            "hideDelay": 100,
+            "textStyle": {
+                "fontSize": 14
+            },
+            "borderWidth": 0,
+            "padding": 5
+        },
+        "title": [
+            {
+                "text": "\u6885\u82b1-\u4f1a\u5458\u7c7b\u578b",
+                "padding": 5,
+                "itemGap": 10
+            }
+        ]
+    };
+    chart_fe48a68d06754bc8b9493526c2ce6a49.setOption(option_fe48a68d06754bc8b9493526c2ce6a49);
+</script>
+{% endblock %}

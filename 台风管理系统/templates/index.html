@@ -1,0 +1,85 @@
+﻿<body bgcolor="#E6E6FA">
+{% extends "layout.html" %}
+
+{% block left %}
+
+<style>
+ul {
+    list-style-type: none;
+    background-color: #000000;
+    height: 800px;
+    padding: 8px 16px;
+
+}
+
+li a {
+    display: block;
+    color:#FFFFFF;
+    text-decoration: none;
+}
+li a.active {
+    background-color: #4CAF50;
+    color: #000000;
+}
+
+li a:hover:not(.active) {
+    background-color: #4CAF50;
+    color: #000000;
+}
+</style>
+
+
+<div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+        <form action="/sql" method="post" >
+            <select name="limit" id="limit">
+                <option></option>
+                <option selected="selected">--请选择查询的台风名称--</option>
+                <option >灿都</option>
+                <option >马鞍</option>
+                <option >梅花</option>
+                <option >莫兰蒂</option>
+            </select>
+            <input type="submit" value="查询" />
+        </form>
+
+        <form action="/crwal" method="post">
+            <!--        <input type="submit" value="post请求" name="bow"/>-->
+            <p></p>
+            <style type="text/css">
+                button {
+                    width: 200px;
+                    padding:8px;
+                    background-color: #3498DB;
+                    color: aliceblue;
+                    -moz-border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                    border-radius: 10px; /* future proofing */
+                    -khtml-border-radius: 10px; /* for old Konqueror browsers */
+                    text-align: center;
+                    vertical-align: baseline;
+                    border: 1px solid transparent;
+                    font-weight: 900;
+                    font-size:125%  }
+            </style>
+
+
+            <div style="text-align:left">
+                <button>
+                    Crawl Data
+                </button>
+            </div>
+        </form>
+    </ul>
+</div>
+
+{% endblock %}
+
+{% block right %}
+<!--右边展示-->
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header">台风-数据分析</h1>
+
+</div>
+{% endblock %}
+</body>

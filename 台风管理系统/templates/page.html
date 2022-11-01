@@ -1,0 +1,51 @@
+﻿<body bgcolor="#E6E6FA">
+{% extends "layout.html" %}
+
+{% block left %}
+
+<style>
+ul {
+    list-style-type: none;
+    background-color: #000000;
+    height: 800px;
+    padding: 8px 16px;
+
+}
+
+li a {
+    display: block;
+    color:#FFFFFF;
+    text-decoration: none;
+}
+li a.active {
+    background-color: #4CAF50;
+    color: #000000;
+}
+
+li a:hover:not(.active) {
+    background-color: #4CAF50;
+    color: #000000;
+}
+</style>
+
+
+<div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+        <li><a href="/{{name}}-LDA主题模型">{{name}}-LDA主题模型</a></li>
+        <li><a href="/{{name}}-词云">{{name}}-词云</a></li>
+        <li><a href="/{{name}}-会员类型">{{name}}-会员类型</a></li>
+        <li><a href="/{{name}}-数据指标变化趋势">{{name}}-数据指标变化趋势</a></li>
+    </ul>
+</div>
+
+
+{% endblock %}
+
+{% block right %}
+<!--右边展示-->
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header">{{title}}</h1>
+
+</div>
+{% endblock %}
+</body>
