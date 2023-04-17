@@ -13,6 +13,7 @@
         <li><a href="/radius3">{{title7}}</a></li>
         <li><a href="/radius4">{{title8}}</a></li>
         <li><a href="/picture">{{title9}}</a></li>
+        <li><a href="/number">{{title10}}</a></li>
     </ul>
 </div>
 {% endblock %}
@@ -42,43 +43,43 @@
 
 <script>
 
-        var chartDom = document.getElementById('main');
-        var myChart = echarts.init(chartDom);
-        var keywords = {{form.echart2.data|safe}};
-        var option;
-        var option = {
-            series: [{
-                type: 'wordCloud',
-                //maskImage: maskImage,
-                sizeRange: [15, 80],
-                rotationRange: [0, 0],
-                rotationStep: 45,
-                gridSize: 8,
-                shape: 'circle',
-                width: '100%',
-                height: '100%',
-                textStyle: {
-                    normal: {
-                        color: function () {
-                            return 'rgb(' + [
-                                Math.round(Math.random() * 160),
-                                Math.round(Math.random() * 160),
-                                Math.round(Math.random() * 160)
-                            ].join(',') + ')';
-                        },
-                        fontFamily: 'sans-serif',
-                        fontWeight: 'normal'
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var keywords = {{form.echart2.data|safe}};
+    var option;
+    var option = {
+        series: [{
+            type: 'wordCloud',
+            //maskImage: maskImage,
+            sizeRange: [15, 80],
+            rotationRange: [0, 0],
+            rotationStep: 45,
+            gridSize: 8,
+            shape: 'circle',
+            width: '100%',
+            height: '100%',
+            textStyle: {
+                normal: {
+                    color: function () {
+                        return 'rgb(' + [
+                            Math.round(Math.random() * 160),
+                            Math.round(Math.random() * 160),
+                            Math.round(Math.random() * 160)
+                        ].join(',') + ')';
                     },
-                    emphasis: {
-                        shadowBlur: 10,
-                        shadowColor: '#333'
-                    }
+                    fontFamily: 'sans-serif',
+                    fontWeight: 'normal'
                 },
-                data: keywords
-            }]
-        };
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowColor: '#333'
+                }
+            },
+            data: keywords
+        }]
+    };
 
-         option && myChart.setOption(option);
+    option && myChart.setOption(option);
 
 </script>
 {% endblock %}

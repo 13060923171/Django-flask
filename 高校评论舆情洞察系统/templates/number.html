@@ -1,0 +1,79 @@
+﻿<body bgcolor="#E6E6FA">
+{% extends "layout.html" %}
+
+{% block left %}
+<div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+        <li><a href="/line">{{title1}}</a></li>
+        <li><a href="/word">{{title2}}</a></li>
+        <li><a href="/barh">{{title3}}</a></li>
+        <li><a href="/pie">{{title4}}</a></li>
+        <li><a href="/radius1">{{title5}}</a></li>
+        <li><a href="/radius2">{{title6}}</a></li>
+        <li><a href="/radius3">{{title7}}</a></li>
+        <li><a href="/radius4">{{title8}}</a></li>
+        <li><a href="/picture">{{title9}}</a></li>
+        <li><a href="/number">{{title10}}</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block right %}
+
+<script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+<script type="text/javascript" src="https://assets.pyecharts.org/assets/themes/romantic.js"></script>
+
+<!--右边展示-->
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header">{{title10}}</h1>
+    <style>
+        .circle {
+            border-radius: 0; /* 去掉圆角 */
+            width: 200px;
+            height: 200px; /* 宽高相同 */
+            padding: 30px;
+            background-color: #f0f0f0; /* 背景色 */
+            border: 2px solid #666;
+            color: #666;
+            text-align: center;
+            font: 32px Arial, sans-serif;
+            display: inline-block; /* 行内块元素 */
+            margin-right: 10px; /* 右边距 */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 阴影 */
+            transition: transform 0.3s; /* 过渡 */
+            line-height: 40px; /* 行高 */
+        }
+        .container {
+            text-align: left; /* 水平靠左对齐 */
+        }
+        .circle:hover {
+            transform: scale(1.1); /* 缩放 */
+        }
+    </style>
+    <div class="container">
+        <div class="circle">高校发帖总舆情数为：{{sum_number}}</div>
+        <div class="circle">月发帖数量均值为：{{moon_mean}}</div>
+        <div class="circle">周发帖数量均值为：{{week_mean}}</div>
+        <div class="circle">日发帖数量均值为：{{day_sum}}</div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 style="border: 2px dashed blue; padding: 10px; margin: 20px; text-align: center; background-color: rgba(255, 255, 0, 0.5); mix-blend-mode: multiply;">{{title12}}</h1>
+    <table style="border: 1px solid black; margin: 0 auto;">
+        <tr>
+            <th>最新评论</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{user.content}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+
+    {% block echarts_js %}
+
+    {% endblock %}
+</body>

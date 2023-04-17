@@ -84,7 +84,7 @@ class SourceDataDemo:
         ls = ls[1:101]
         data = []
         for key, values in ls:
-            di = {"name": key, "value": values}
+            di = {"name": '{}-{}'.format(key,values), "value": int(values)}
             data.append(di)
 
         echart = {
@@ -206,6 +206,47 @@ class SourceDataDemo:
         }
         return echart
 
+    @property
+    def echart6(self):
+        df = pd.read_csv('./data/郑州大学.csv', parse_dates=['时间'], index_col="时间")
+        df['发帖数量'] = 1
+        new_df1 = df['发帖数量'].resample('W').sum()
+        x_data = []
+        y_data = []
+        for x, y in zip(new_df1.index, new_df1.values):
+            x = str(x).split(" ")
+            x = x[0]
+            if '2023' in str(x):
+                x_data.append(x)
+                y_data.append(y)
+        week_mean = int(sum(y_data) / len(y_data))
+
+        new_df2 = df['发帖数量'].resample('M').sum()
+        x_data2 = []
+        y_data2 = []
+        for x, y in zip(new_df2.index, new_df2.values):
+            x = str(x).split(" ")
+            x = x[0]
+            if '2023' in str(x):
+                x_data2.append(x)
+                y_data2.append(y)
+
+        moon_mean = int(sum(y_data2) / len(y_data2))
+
+        day1 = str(df.index.max()).split(" ")[0]
+        day_sum = df[day1]['发帖数量'].sum()
+        new_df3 = df[day1]['内容']
+        new_df3 = new_df3.dropna(how='any',axis=0)
+        new_df3 = new_df3.iloc[:30]
+        new_df4 = new_df3.values
+        echart = []
+        for n in new_df4:
+            data = {
+                "content":n
+            }
+            echart.append(data)
+        return moon_mean,week_mean,day_sum,echart
+
 
 class SourceData(SourceDataDemo):
     def __init__(self):
@@ -223,6 +264,9 @@ class SourceData(SourceDataDemo):
         self.title7 = '多模型召回率比较'
         self.title8 = '多模型F1值比较'
         self.title9 = '多模型ROC曲线比较'
+        self.title10 = '大学生网络舆情信息总览'
 
-
+if __name__ == '__main__':
+    data = SourceData()
+    print(data.echart6)
 
