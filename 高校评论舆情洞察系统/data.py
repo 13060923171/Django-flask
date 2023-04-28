@@ -21,7 +21,7 @@ warnings.filterwarnings('ignore')
 class SourceDataDemo:
     @property
     def echart1(self):
-        df = pd.read_csv('./data/郑州大学.csv', parse_dates=['时间'], index_col="时间")
+        df = pd.read_csv('../data/郑州大学.csv', parse_dates=['时间'], index_col="时间")
         df['发帖数量'] = 1
         new_df1 = df['发帖数量'].resample('W').sum()
         x_data = []
@@ -268,5 +268,5 @@ class SourceData(SourceDataDemo):
 
 if __name__ == '__main__':
     data = SourceData()
-    print(data.echart6)
+    print(data.echart1)
 

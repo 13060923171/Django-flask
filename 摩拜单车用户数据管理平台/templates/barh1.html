@@ -1,0 +1,81 @@
+﻿import * as echarts from 'echarts';
+<body bgcolor="#E6E6FA">
+{% extends "layout.html" %}
+
+{% block left %}
+<div class="col-sm-3 col-md-2 sidebar">
+       <ul class="nav nav-sidebar">
+        <li><a href="/pie1">{{title1}}</a></li>
+        <li><a href="/pie2">{{title2}}</a></li>
+        <li><a href="/pie3">{{title6}}</a></li>
+        <li><a href="/barh1">{{title3}}</a></li>
+        <li><a href="/barh2">{{title4}}</a></li>
+        <li><a href="/line">{{title5}}</a></li>
+        <li><a href="/picture">{{title7}}</a></li>
+        <li><a href="/table">{{title8}}</a></li>
+        <li><a href="/map">{{title9}}</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block right %}
+
+<script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+<script type="text/javascript" src="https://assets.pyecharts.org/assets/themes/romantic.js"></script>
+
+<!--右边展示-->
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header">{{title3}}</h1>
+
+    <div class="row placeholders">
+        <!--展示区-->
+        <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+        <div class="chart-container" style="height:500px;" id="main">
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block echarts_js %}
+<script>
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    option = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {},
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'value',
+            boundaryGap: [0, 0.01]
+        },
+        yAxis: {
+            type: 'category',
+            data:{{form.echart3.xAxis|safe}},
+    },
+    series: [
+        {
+            type: 'bar',
+            data: {{form.echart3.data|safe}},
+    }
+    ]
+    };
+    option && myChart.setOption(option);
+
+
+</script>
+{% endblock %}
+</body>

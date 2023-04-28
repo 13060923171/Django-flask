@@ -1,0 +1,52 @@
+﻿import * as echarts from 'echarts';
+{% extends "layout.html" %}
+
+{% block left %}
+<div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+        <li><a href="/pie1">{{title1}}</a></li>
+        <li><a href="/pie2">{{title2}}</a></li>
+        <li><a href="/pie3">{{title6}}</a></li>
+        <li><a href="/barh1">{{title3}}</a></li>
+        <li><a href="/barh2">{{title4}}</a></li>
+        <li><a href="/line">{{title5}}</a></li>
+        <li><a href="/picture">{{title7}}</a></li>
+        <li><a href="/table">{{title8}}</a></li>
+        <li><a href="/map">{{title9}}</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block right %}
+
+<script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+<script type="text/javascript" src="https://assets.pyecharts.org/assets/themes/romantic.js"></script>
+
+<!--右边展示-->
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 style="border: 2px dashed blue; padding: 10px; margin: 20px; text-align: center; background-color: rgba(255, 255, 0, 0.5); mix-blend-mode: multiply;">{{title8}}</h1>
+    <!-- 使用Bootstrap的表格样式 -->
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>前项</th>
+            <th>后项</th>
+            <th>支持度 %</th>
+            <th>置信度 %</th>
+            <th>提升</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for label in labels %}
+        <tr>
+            <td>{{label.antecedents}}</td>
+            <td>{{label.consequents}}</td>
+            <td>{{label.support}}</td>
+            <td>{{label.confidence}}</td>
+            <td>{{label.lift}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
