@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine
-from sqlalchemy import Column,String,Text,Integer
+from sqlalchemy import Column,String,Text,Integer,Float
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -18,7 +18,7 @@ class COMMODITY(Base):
     __tablename__ ='jdsq'
     id = Column("id",Integer(),primary_key=True,autoincrement=True)
     #设置数据库，存储这些内容的格式，长度等
-    price = Column('price',String(30))
+    price = Column('price',Float())
     comment= Column('comment',String(30))
     goodrate = Column('goodrate',String(30))
     poorrate = Column('poorrate',String(30))

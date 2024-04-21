@@ -1,0 +1,442 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>index</title>
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+    <script type="text/javascript" src="../static/js/echarts.min.js"></script>
+
+    <link rel="stylesheet" href="../static/css/comon0.css">
+</head>
+<script>
+    $(window).load(function(){
+        $(".loading").fadeOut()
+    })
+
+    /****/
+    $(document).ready(function(){
+        var whei=$(window).width()
+        $("html").css({fontSize:whei/20})
+        $(window).resize(function(){
+            var whei=$(window).width()
+            $("html").css({fontSize:whei/20})
+        });
+    });
+
+
+
+</script>
+<script type="text/javascript" src="../static/js/echarts.min.js"></script>
+<script type="text/javascript" src="../static/js/china.js"></script>
+
+<body>
+
+<div class="loading">
+    <div class="loadbox"><img src="../static/picture/loading.gif"> 页面加载中...</div>
+</div>
+<div class="head">
+    <h1>{{title}}</h1>
+    <div class="weather">
+        <!--        <img src="picture/weather.png"><span>多云转小雨</span>-->
+        <span id="showTime"></span>
+    </div>
+
+    <script>
+        var t = null;
+        t = setTimeout(time,1000);//開始运行
+        function time()
+        {
+            clearTimeout(t);//清除定时器
+            dt = new Date();
+            var y=dt.getFullYear();
+            var mt=dt.getMonth()+1;
+            var day=dt.getDate();
+            var h=dt.getHours();//获取时
+            var m=dt.getMinutes();//获取分
+            var s=dt.getSeconds();//获取秒
+            document.getElementById("showTime").innerHTML = y+"年"+mt+"月"+day+"日"+"-"+h+"时"+m+"分"+s+"秒";
+            t = setTimeout(time,1000); //设定定时器，循环运行
+        }
+
+
+
+    </script>
+
+
+</div>
+<div class="mainbox">
+    <ul class="clearfix">
+        <li>
+            <div class="boxall" style="height: 3.2rem">
+                <div class="alltitle">{{form.echart1.title}}</div>
+                <div class="allnav" id="echart1"></div>
+                <div class="boxfoot"></div>
+            </div>
+            <div class="boxall" style="height: 3.2rem">
+                <div class="alltitle">{{form.echart2.title}}</div>
+                <div class="allnav" id="echart2"></div>
+                <div class="boxfoot"></div>
+            </div>
+            <div class="boxall" style="height: 3.2rem">
+                <div class="alltitle">{{form.echart3.title}}</div>
+                <div class="allnav" id="echart3"></div>
+                <div class="boxfoot"></div>
+            </div>
+        </li>
+        <li>
+            <div class="bar">
+                <div class="barbox">
+                    <ul class="clearfix">
+                        <li class="pulll_left counter">{{form.counter.value}}</li>
+                        <li class="pulll_left counter">{{form.counter2.value}}</li>
+                    </ul>
+                </div>
+                <div class="barbox2">
+                    <ul class="clearfix">
+                        <li class="pulll_left">{{form.counter.name}}</li>
+                        <li class="pulll_left">{{form.counter2.name}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="boxall" style="height:8.3rem">
+                <div class="alltitle">{{form.echart6.title}}</div>
+                <div class="allnav" id="echart6"></div>
+                <div class="boxfoot"></div>
+            </div>
+        </li>
+        <li>
+            <div class="boxall" style="height:4.9rem">
+                <div class="alltitle">{{form.echart4.title}}</div>
+                <div class="allnav" id="echart4"></div>
+                <div class="boxfoot"></div>
+            </div>
+            <div class="boxall" style="height: 4.7rem">
+                <div class="alltitle">{{form.echart5.title}}</div>
+                <div class="allnav" id="echart5"></div>
+                <div class="boxfoot"></div>
+            </div>
+
+        </li>
+    </ul>
+</div>
+<div class="back"></div>
+
+<!--echart1-->
+<script>
+    $(function echarts_1() {
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echart1'));
+        option = {
+            tooltip: {
+                trigger: 'axis'
+            },
+            xAxis: {
+                type: 'category',
+                data: {{form.echart1.xAxis|tojson|safe}},
+        axisLabel: {
+            rotate: 45, // 设置横坐标标签倾斜角度为60度
+                interval: 10, // 强制显示所有标签
+                margin: 10, // 调整标签与坐标轴的距离，使标签不会被遮挡,
+                textStyle: {
+                color: 'white' // 设置横坐标标签文字颜色为白色
+            }
+        }
+    },
+        yAxis: {
+            type: 'value',
+                axisLabel: {
+                margin: 10, // 调整标签与坐标轴的距离，使标签不会被遮挡
+                    textStyle: {
+                    color: 'white' // 设置纵坐标标签文字颜色为白色
+                }
+            }
+        },
+        series: [
+            {
+                data: {{form.echart1.data|tojson|safe}},
+        type: 'line',
+            smooth: true,
+            label: {
+            // 设置标签显示
+            show: false, // 显示标签
+                position: 'top' // 标签位置，可以根据需要调整
+        },
+        lineStyle: {
+            color: '#00d887', // 设置线的颜色为红色，你可以根据需要调整
+        },
+    }
+    ]
+    };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        window.addEventListener("resize",function(){
+            myChart.resize();
+        });
+    })
+</script>
+
+<!--echart2-->
+<script>
+    $(function echarts_2() {
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echart2'));
+        option = {
+            tooltip: {
+                trigger: 'axis'
+            },
+            xAxis: {
+                type: 'category',
+                data: {{form.echart2.xAxis|tojson|safe}},
+        axisLabel: {
+            rotate: 45, // 设置横坐标标签倾斜角度为60度
+                interval: 3, // 强制显示所有标签
+                margin: 10, // 调整标签与坐标轴的距离，使标签不会被遮挡,
+                textStyle: {
+                color: 'white' // 设置横坐标标签文字颜色为白色
+            }
+        }
+    },
+        yAxis: {
+            type: 'value',
+                axisLabel: {
+                margin: 10, // 调整标签与坐标轴的距离，使标签不会被遮挡
+                    textStyle: {
+                    color: 'white' // 设置纵坐标标签文字颜色为白色
+                }
+            }
+        },
+        series: [
+            {
+                data: {{form.echart2.data|tojson|safe}},
+        type: 'line',
+            smooth: true,
+            label: {
+            // 设置标签显示
+            show: false, // 显示标签
+                position: 'top' // 标签位置，可以根据需要调整
+        },
+        lineStyle: {
+            color: '#00d887', // 设置线的颜色为红色，你可以根据需要调整
+        },
+    }
+    ]
+    };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        window.addEventListener("resize",function(){
+            myChart.resize();
+        });
+    })
+</script>
+
+
+<!--echart3_1-->
+<script>
+    $(function echarts_3() {
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echart3'));
+        option = {
+            tooltip: {
+                trigger: 'axis'
+            },
+            xAxis: {
+                type: 'category',
+                data: {{form.echart3.xAxis|tojson|safe}},
+        axisLabel: {
+            rotate: 45, // 设置横坐标标签倾斜角度为60度
+                interval: 0, // 强制显示所有标签
+                margin: 10, // 调整标签与坐标轴的距离，使标签不会被遮挡,
+                textStyle: {
+                color: 'white' // 设置横坐标标签文字颜色为白色
+            }
+        }
+    },
+        yAxis: {
+            type: 'value',
+                axisLabel: {
+                margin: 10, // 调整标签与坐标轴的距离，使标签不会被遮挡
+                    textStyle: {
+                    color: 'white' // 设置纵坐标标签文字颜色为白色
+                }
+            }
+        },
+        series: [
+            {
+                data: {{form.echart3.data|tojson|safe}},
+        type: 'line',
+            smooth: true,
+            label: {
+            // 设置标签显示
+            show: false, // 显示标签
+                position: 'top' // 标签位置，可以根据需要调整
+        },
+        lineStyle: {
+            color: '#00d887', // 设置线的颜色为红色，你可以根据需要调整
+        },
+    }
+    ]
+    };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        window.addEventListener("resize",function(){
+            myChart.resize();
+        });
+    })
+</script>
+
+
+<!--echarts4-->
+<script>
+    $(function echarts_4() {
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echart4'));
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {},
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value',
+                boundaryGap: [0, 0.01],
+                axisLabel: {
+                    textStyle: {
+                        color: 'white' // 设置横坐标标签文字颜色为白色
+                    }
+                }
+            },
+            yAxis: {
+                type: 'category',
+                data:{{form.echart4.xAxis|tojson|safe}},
+        axisLabel: {
+            textStyle: {
+                color: 'white' // 设置字体颜色为白色
+            }
+        }
+    },
+        series: [
+            {
+                type: 'bar',
+                data: {{ form.echart4.data|tojson|safe }},
+        itemStyle: {
+            normal: {
+                color: '#00d887' // 设置柱状图颜色为绿色
+            }
+        }
+    }
+    ]
+    };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        window.addEventListener("resize",function(){
+            myChart.resize();
+        });
+    })
+</script>
+<!--echarts5-->
+<script>
+    $(function echarts_5() {
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echart5'));
+        option = {
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: {{form.echart5.name|tojson|safe}}
+    },
+        grid: {
+            left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+        },
+        xAxis: {
+            type: 'category',
+                boundaryGap: false,
+                data: {{form.echart5.xAxis|tojson|safe}},
+
+            axisLabel: {
+                rotate: 45, // 设置横坐标标签倾斜角度为60度
+                    interval: 0, // 强制显示所有标签
+                    margin: 10, // 调整标签与坐标轴的距离，使标签不会被遮挡,
+                    textStyle: {
+                    color: 'white' // 设置字体颜色为白色
+                }
+            }
+        },
+        yAxis: {
+            type: 'value',
+                axisLabel: {
+                textStyle: {
+                    color: 'white' // 设置字体颜色为白色
+                }
+            }
+        },
+        series: [
+            {
+                name: {{form.echart5.name[0]|tojson|safe}},
+        type: 'line',
+            data: {{form.echart5.data1|tojson|safe}},
+        itemStyle: {
+            normal: {
+                color: '#00d887' // 设置柱状图颜色为绿色
+            }
+        }
+    },
+        {
+            name: {{form.echart5.name[1]|tojson|safe}},
+            type: 'line',
+                data: {{form.echart5.data2|tojson|safe}},
+            itemStyle: {
+                normal: {
+                    color: '#FF5733' // 设置柱状图颜色为绿色
+                }
+            }
+        },
+    ]
+    };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        window.addEventListener("resize",function(){
+            myChart.resize();
+        });
+    })
+</script>
+
+<style>
+    /* 定义公告样式 */
+    .comments {
+        color: white; /* 字体颜色 */
+        font-size: 16pt; /* 字体大小 */
+        line-height: 1.5; /* 行间距 */
+        word-wrap: break-word; /* 若必要，换行 */
+    }
+
+    /* 定义公告栏标题样式 */
+    .comments-title {
+        color: white; /* 字体颜色 */
+        font-size: 16pt; /* 标题字体稍大一些 */
+    }
+</style>
+
+<script>
+    var comments = {{ comments|tojson|safe }};
+    var commentsDiv = '<h1 class="comments-title">负面舆情</h1><div>';
+    for (var i = 0; i < comments.length; i++) {
+        commentsDiv += `<p class="comments">${comments[i]}</p>`;
+    }
+    commentsDiv += '</div>';
+    document.getElementById('echart6').innerHTML += commentsDiv;
+</script>
+
+</body>
+</html>

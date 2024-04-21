@@ -1,0 +1,27 @@
+﻿<body bgcolor="#E6E6FA">
+{% extends "layout.html" %}
+
+{% block left %}
+<div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+        <li><a href="/word">{{title2}}</a></li>
+        <li><a href="/barh">{{title3}}</a></li>
+        <li><a href="/pie">{{title4}}</a></li>
+        <li><a href="/radius1">{{title5}}</a></li>
+        <li><a href="/radius2">{{title6}}</a></li>
+        <li><a href="/radius3">{{title7}}</a></li>
+        <li><a href="/radius4">{{title8}}</a></li>
+        <li><a href="/big_screen">高校评论舆情可视化</a></li>
+    </ul>
+</div>
+
+{% endblock %}
+
+{% block right %}
+<!--右边展示-->
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header">{{title}}</h1>
+
+</div>
+{% endblock %}
+</body>
